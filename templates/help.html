@@ -1,0 +1,74 @@
+{% extends "layout.html" %}
+
+{% block title %}
+NIM: Help
+{% endblock %}
+
+
+{% block main %}
+<div class="help">
+    <div>
+        <h1 class="text-centred">HOW TO PLAY NIM</h1>
+        <p>NIM is a fairly simple game, in NIM you are given a number of piles with each pile containing some number of items. You are allowed to remove any 
+            amount of objects from any pile but be <em>warned</em>, you have an adversary who can also pick any arbitary number of objects from a pile, you 
+            both play in turns and the person to pick the last object from any pile loses. Goodluck and check out the section below on how to create 
+            and play custom games of NIM.
+        </p>
+    </div>
+    <br>
+    <div>
+        <h1 class="text-centred">UNDERSTANDING THE SITE</h1>
+        <div>
+            <div class="mb-3 h-item">
+                <h5>1. To start the game click on begin in the home page </h5>
+                <img src="/static/pages/HOME.png" class="img">
+            </div>
+
+            <div class="mb-3 h-item">
+                <h5>2. Configure your game by game by setting the parameters</h5>
+                <img src="/static/pages/NIM.png" class="img">
+            </div>
+            <ul>
+                <li><b>RANDOMIZE</b></li>
+                <p>Feeling too lazy to lazy to set the customize your game, don't worry just click on the <a href="/game"><button>Randomize</button></a> button and 
+                    you can easily play a game with random settings.
+                </p>
+                <li><b>TRAINING EPOCHS</b></li>
+                <p>The number of training epochs dictates how many practice games of NIM the AI plays before making moves, essentially the higher it is set the increasingly
+                    better the AI gets at playing the game and same but inverse applies with a lower value for the training epoch.
+                </p>
+                <li><b>PILES</b></li>
+                <p>As I'm sure you've already guessed, this input field's value simply describes the number of piles in the game.</p>
+            </ul>
+            <div class="mb-3 h-item">
+                <h5>3. Using the game's sidebar</h5>
+                <img src="/static/pages/TOOLS.png" class="img">
+            </div>
+            <ul>
+                <li><b>REVERSE MOVE</b></li>
+                <p> C'mon' I'm sure you know what this does, well it simply reverses your last move</p>
+
+                <li><b>AI MOVE</b></li>
+                <p>This returns the most optimal move most likely to be made by the AI in this state, in other words it plays for you the move the AI
+                    would have made if in the same situation. To make sure you actully play the game, I made this work only twice yes I'm a prick (:
+                </p>
+                <li><b>NEW GAME</b></li>
+                <p>I mean c'mon', I'm sure you know what this is for</p>
+
+                <li><b>HIGHLIGHT</b></li>
+                <p>This feature allows you to highlight dangerous moves to play in a state</p>
+            </ul>
+        </div>
+    </div>
+    <div>
+        <p>Well thats all, it's not a very robust game. I plan to make revisions of the game in the future like adding online players and accounts
+            but until then this is a bare-bone implementation of the NIM Game with some extra features I could conjure up.</p>
+    </div>
+</div>
+<footer>
+    <nav class="text-centred">
+        <p>© MALIK ADELANA TAIWO <a href="https://lifeofdmt.github.io/"><button>Check him out</button></a></p>
+    </nav>
+</footer>
+
+{% endblock %}

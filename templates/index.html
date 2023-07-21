@@ -1,0 +1,37 @@
+{% extends "layout.html" %}
+
+{% block title %}
+NIM
+{% endblock %}
+
+{% block main %}
+
+<div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <div>
+        <div style="color: lightseagreen;" class="mid-content">
+            <div>
+                <img src="/static/NIM.png" width="200px">
+                <h1><b>LETS PLAY NIM</b></h1>
+
+                <div class="inline">
+                    <a href="/game">
+                        <button type="button" class="text-centred" >
+                            Begin &#8594;
+                        </button>
+                    </a>
+                    <a href="/help">
+                        <button type="button" class="text-centred">
+                            Help ?
+                        </button>
+                    </a>
+                </div>
+            </div>
+            <br>
+        </div>
+    </div>
+</div>
+{% endblock %}

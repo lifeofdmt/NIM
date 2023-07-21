@@ -1,0 +1,73 @@
+{% extends "layout.html" %}
+
+{% block title %}
+NIM: Configure Game
+{% endblock %}
+
+{% block main %}
+<div>
+    
+    <div id="middle">
+        <div class="mid-box">
+            <img src="/static/NIM.png" width="100px">
+            <div class="mb-3">
+                <form action="/game" method="post">
+                    <h3>*Random Settings</h3>
+                    <input type="text" name="param" value="random" hidden>
+                    <button>Randomize</button>
+                </form>
+            </div>
+            <div>
+                <form action="/game" method="post">
+                    <input type="text" name="param" value="custom" hidden>
+                    <div class="mb-3">
+                        <h3>*Number of piles</h3>
+                        <input type="number" placeholder="2-6" name="piles" max=6 id="n_piles">
+                    </div>
+                    <div class="mb-3">
+                        <h3>*Training Epochs</h3>
+                        <input id="slider" type="range" min="0" max="10000" cstep="1" class="slider" value=5000 onchange="updateSlider(this.value)">
+                        <div>            
+                            <input type="number" placeholder="1-10000" value=5000 name="epochs" max=10000 id="epochs"> 
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <button>Begin</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    let piles = document.getElementById("n_piles");
+    piles.addEventListener("input", function(e){
+        if (piles.value < 2)
+        {
+            piles.value = 2
+        }
+    });
+    let epochs = document.getElementById("epochs");
+    let slider = document.querySelector("#slider");
+
+    function updateSlider(slideAmount)
+    {
+        epochs.value = slideAmount;
+    }
+
+    epochs.addEventListener("input", function(e){
+
+        if (epochs.value > 0 && epochs.value <= 10000)
+        {
+            slider.value = epochs.value;
+        }
+
+        else
+        {
+            epochs.value = 0;
+        }
+    });
+</script>
+
+{% endblock %}
