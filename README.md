@@ -18,6 +18,15 @@ A web-based implementation the game NIM
 > > - BestFutureReward(state)
 > > - UpdateQValue(state, action, old_q, reward, future_rewards)
 > > - Choose_Action(state, epsilon)
+> > - GetQValue(state, action)
+>
+> ## Actions(state)
+> This just returns all actions possible in a ***state*** where a state is simply a configuration of the stack of objects, and the ***actions*** are simply arrays
+> containing a pile index and an object count **[pile, no_of_objects]**.
+>
+> ## GetQValue(state, action)
+> 
+> How all this and more have been implemented doesn't seem too important to mention it's the overall idea that counts
 > ***
 > Check my work out here *[portfolio](https://lifeofdmt.github.io)*
 
